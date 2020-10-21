@@ -8,9 +8,15 @@
  * getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> [1, 3, 5, 7, 9]
  * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
  */
+
 function getOdds(numbers) {
-  // Your code here
-}
+  const onlyOdd = numbers.filter(function (number) {
+    return (number%2 !== 0);
+  });
+  return onlyOdd;
+}//end getOdds
+
+
 
 /**
  * getEvens(numbers):
@@ -23,7 +29,10 @@ function getOdds(numbers) {
  * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
  */
 function getEvens(numbers) {
-  // Your code here
+  const onlyEven = numbers.filter(function (number) {
+    return (number%2 === 0);
+  });
+  return onlyEven;
 }
 
 /**
@@ -36,8 +45,16 @@ function getEvens(numbers) {
  * getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
  */
 function getDuplicateCount(x, numbers) {
-  // Your code here
-}
+ let counter = 0;
+
+numbers.forEach(function(number){
+  if(number === x)
+      counter++;
+});//end for each 
+
+return counter;
+}//end function
+
 
 /**
  * makeThemDoctors(students):
@@ -49,7 +66,14 @@ function getDuplicateCount(x, numbers) {
  */
 
 function makeThemDoctors(students) {
-  // Your code here
-}
+
+  const doctors = students.map(function (student) {
+      return "Dr. ".concat(student);
+  }); //end map
+
+  return doctors;
+}//end function
+
+
 
 module.exports = { getOdds, getEvens, getDuplicateCount, makeThemDoctors };
